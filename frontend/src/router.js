@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from './components/MainPage.vue'
+import Video1 from './components/Video1.vue'
 
 
 const routes = [
     {
         path:'/',
         component: MainPage
+    },
+    {
+        path: '/video1',
+        component: Video1
     }
 ]
 

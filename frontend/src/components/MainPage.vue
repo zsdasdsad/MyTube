@@ -12,14 +12,14 @@ import pic7 from '../assets/pic7.jpg';
 import pic8 from '../assets/pic8.jpg';
 
 const images = ref([
-  { src: pic1, text: 'апывапрыаыпраы' },
-  { src: pic2, text: 'аааааааааа' },
-  { src: pic3, text: 'пермь прекрасна' },
-  { src: pic4, text: 'чебупели' },
-  { src: pic5, text: 'маинкрафт нуб против про' },
-  { src: pic6, text: 'какой то чел' },
-  { src: pic7, text: 'хуйня полная' },
-  { src: pic8, text: 'никогда не смотри это в 6:66 ночи' }
+  { src: pic1, text: 'апывапрыаыпраы', video: '/video1' },
+  { src: pic2, text: 'аааааааааа', video: '/video2' },
+  { src: pic3, text: 'пермь прекрасна', video: '/video3' },
+  { src: pic4, text: 'чебупели', video: '/video4' },
+  { src: pic5, text: 'маинкрафт нуб против про', video: '/video5' },
+  { src: pic6, text: 'какой то чел', video: '/video6' },
+  { src: pic7, text: 'хуйня полная', video: '/video7' },
+  { src: pic8, text: 'никогда не смотри это в 6:66 ночи', video: '/video8' }
 ]);
 
 const shuffleArray = (array) => {
@@ -45,10 +45,10 @@ onMounted(() => {
       <input type="text" placeholder="Search..." class="search-bar" />
     </div>
     <div class="video_pic_container">
-      <div v-for="(image, index) in images" :key="index" class="image_container" @click="console.log(image)">
+      <router-link v-for="(image, index) in images" :key="index" class="image_container" @click="console.log(image)" :to="image.video">
         <img :src="image.src" alt="Video" class="video_pic" />
         <p>{{ image.text }}</p>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -72,6 +72,10 @@ h1 {
   font-family: sans-serif;
 }
 .search-bar {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   max-width: 500px;
   padding: 10px;
@@ -80,7 +84,6 @@ h1 {
   border-radius: 100px;
 }
 .header {
-  margin-top: -300px;
   width: 100%;
   display: flex;
   justify-content: center;
