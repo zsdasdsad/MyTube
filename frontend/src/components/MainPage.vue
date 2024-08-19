@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-// Импортируем изображения
 import pic1 from '../assets/pic1.jpg';
 import pic2 from '../assets/pic2.jpg';
 import pic3 from '../assets/pic3.jpg';
@@ -18,7 +17,7 @@ const images = ref([
   { src: pic4, text: 'чебупели', video: '/video4' },
   { src: pic5, text: 'маинкрафт нуб против про', video: '/video5' },
   { src: pic6, text: 'какой то чел', video: '/video6' },
-  { src: pic7, text: 'хуйня полная', video: '/video7' },
+  { src: pic7, text: 'я хз', video: '/video7' },
   { src: pic8, text: 'никогда не смотри это в 6:66 ночи', video: '/video8' }
 ]);
 
@@ -45,7 +44,7 @@ onMounted(() => {
       <input type="text" placeholder="Search..." class="search-bar" />
     </div>
     <div class="video_pic_container">
-      <router-link v-for="(image, index) in images" :key="index" class="image_container" @click="console.log(image)" :to="image.video">
+      <router-link v-for="(image, index) in images" :key="index" class="image_container" @click="console.log(image)" to="/video">
         <img :src="image.src" alt="Video" class="video_pic" />
         <p>{{ image.text }}</p>
       </router-link>

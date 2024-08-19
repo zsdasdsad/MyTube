@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from './components/MainPage.vue'
-import Video1 from './components/Video1.vue'
+import Video from './components/Video.vue'
 
 
 const routes = [
@@ -9,8 +9,8 @@ const routes = [
         component: MainPage
     },
     {
-        path: '/video1',
-        component: Video1
+        path: '/video',
+        component: Video
     }
 ]
 
